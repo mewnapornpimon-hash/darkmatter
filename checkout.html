@@ -64,7 +64,7 @@
                             </p>
 
                             <select class="field">
-                                <option>Italy</option>
+
                                 <option>Thailand</option>
                             </select>
 
@@ -128,7 +128,7 @@
                                 <div class="payment-body">
                                     <div class="field-icon-wrap">
                                         <input type="text" class="field payment-field" placeholder="Card number" />
-                                        <span class="field-icon">🔒</span>
+                                        <span class="field-icon"></span>
                                     </div>
 
                                     <div class="two-col">
@@ -173,7 +173,7 @@
 
                             <div class="field-icon-wrap">
                                 <input type="text" class="field" placeholder="Mobile phone (optional)" />
-                                <span class="field-icon">📱</span>
+                                <span class="field-icon"></span>
                             </div>
 
                             <p class="mini-note">
@@ -218,7 +218,7 @@
                         <div class="summary-lines">
                             <div class="line">
                                 <span>Subtotal</span>
-                                <span id="checkoutSubtotal">€ 0,00</span>
+                                <span id="checkoutSubtotal">฿ 0,00</span>
                             </div>
 
                             <div class="line">
@@ -229,9 +229,9 @@
                             <div class="line total">
                                 <div class="total-left">
                                     <span>Total</span>
-                                    <small>EUR</small>
+                                    
                                 </div>
-                                <span id="checkoutTotal">€ 0,00</span>
+                                <span id="checkoutTotal">฿ 0,00</span>
                             </div>
 
                             <p class="tax-note">Including taxes</p>
@@ -259,8 +259,8 @@
 
             if (!bag.length) {
                 productBox.innerHTML = `<p class="empty-summary">No items in bag.</p>`;
-                subtotalEl.textContent = "€ 0,00";
-                totalEl.textContent = "€ 0,00";
+                subtotalEl.textContent = "฿ 0,00";
+                totalEl.textContent = "฿ 0,00";
                 return;
             }
 
