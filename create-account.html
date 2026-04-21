@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>darkmatter — Create Account</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="create-account.css" />
+</head>
+
+<body>
+    <div class="account-page">
+        <header class="account-header">
+            <div class="nav nav-left">
+               
+            </div>
+
+            <a href="index.html" class="logo-wrap">
+                <img src="image/darkmatter_white.png" alt="darkmatter logo" class="logo-img" />
+            </a>
+
+            <div class="nav nav-right">
+                <a href="account.html">ACCOUNT</a>
+                <a href="bag.html" id="bagCount">BAG [ 0 ]</a>
+            </div>
+        </header>
+
+        <main class="account-main">
+            <section class="create-box">
+                <h1 class="create-title">CREATE ACCOUNT</h1>
+
+                <form class="create-form">
+                    <div class="form-group">
+                        <label for="email">EMAIL *</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label for="firstName">FIRST NAME *</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="YOUR FIRST NAME" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">LAST NAME *</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="YOUR LAST NAME" />
+                        </div>
+                    </div>
+
+                    <div class="two-col">
+                        <div class="form-group">
+                            <label for="country">COUNTRY *</label>
+                            <div class="select-wrap">
+                                <select id="country" name="country">
+                                    <option value="">SELECT COUNTRY</option>
+                                    <option>Thailand</option>
+                                    <option>Japan</option>
+                                    <option>South Korea</option>
+                                    <option>United Kingdom</option>
+                                    <option>Italy</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">BIRTHDATE *</label>
+                            <input type="text" id="birthdate" name="birthdate" placeholder="DD/MM/YYYY" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">PASSWORD *</label>
+                        <div class="password-wrap">
+                            <input type="password" id="password" name="password" placeholder="PASSWORD" />
+                            <button type="button" class="eye-btn" aria-label="Show password">◌</button>
+                        </div>
+                    </div>
+
+                    <div class="strength-row">
+                        <span>PASSWORD STRENGTH:</span>
+                        <div class="strength-bars">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">CONFIRM PASSWORD *</label>
+                        <div class="password-wrap">
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="PASSWORD" />
+                            <button type="button" class="eye-btn" aria-label="Show confirm password">◌</button>
+                        </div>
+                    </div>
+
+                    <label class="check-row">
+                        <input type="checkbox" />
+                        <span>BY CREATING AN ACCOUNT YOU ARE ACCEPTING OUR <a href="#">POLICY</a> *</span>
+                    </label>
+
+                    <label class="check-row">
+                        <input type="checkbox" />
+                        <span>YOU ACCEPT TO RECEIVE UPDATES AND PROMOTIONS</span>
+                    </label>
+
+                    <button type="submit" class="submit-btn">CREATE ACCOUNT</button>
+
+                    <div class="bottom-block">
+                        <p>YOU ALREADY HAVE AN ACCOUNT?</p>
+                        <p>CLICK THE BUTTON BELOW AND GO BACK TO THE LOGIN.</p>
+                        <a href="account.html" class="back-link">LOGIN →</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">INFO</a>
+                <a href="#">CHANGE</a>
+                <a href="#">NEWSLETTER</a>
+                <a href="#">LEGAL AREA</a>
+                <a href="#">ECO-AWARE</a>
+                <a href="#">CUSTOMER CARE</a>
+                <a href="#">SOCIAL</a>
+                <a href="#">CAREERS</a>
+                <a href="#">RETURNS</a>
+                <a href="#">ACCESSIBILITY</a>
+            </div>
+
+            <p class="footer-note">
+                DARKMATTER FASHION BRAND THESIS COLLECTION PRESENTED FOR GRADUATION
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #efefef;
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.account-page {
+    min-height: 100vh;
+    background: #efefef;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.account-header {
+    width: 100%;
+    height: 64px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 22px;
+    position: relative;
+    z-index: 10001;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.account-header a,
+.top-search,
+.menu-trigger,
+.menu-search {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #111;
+    line-height: 1;
+}
+
+.menu-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 42px;
+}
+
+.logo-img {
+    width: 260px;
+    height: 42px;
+    object-fit: contain;
+    filter: brightness(0);
+    display: block;
+}
+
+/* ตอนเปิดเมนู ให้ header เดิมด้านซ้ายหาย เพื่อไม่ให้ซ้อน */
+.account-header.menu-open .nav-left {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* MAIN */
+.account-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 34px 20px 40px;
+    flex: 1;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 624px;
+    margin-top: 22px;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 56px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label,
+.password-row label,
+.forgot-link {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 26px;
+    border: 1px solid #c7c7c7;
+    background: transparent;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    padding: 0 8px;
+}
+
+.password-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.password-group {
+    margin-bottom: 32px;
+}
+
+.login-btn {
+    width: 100%;
+    height: 32px;
+    border: none;
+    background: #9a9a9a;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    margin-bottom: 32px;
+}
+
+.create-account-block p {
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #666;
+    line-height: 1.45;
+}
+
+.create-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #111;
+}
+
+/* MENU OVERLAY */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    background: rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.menu-panel {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 372px 1fr;
+}
+
+.menu-left {
+    background: rgba(244, 244, 244, 0.96);
+    color: #111;
+    padding: 24px 30px 26px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-left-top {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+    height: 40px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10002;
+}
+
+.menu-close {
+    pointer-events: auto;
+}
+
+.menu-left-center {
+    margin-top: 62px;
+    flex: 1;
+}
+
+.menu-links-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.second-group {
+    margin-top: 34px;
+}
+
+.menu-links-group a,
+.menu-bottom-links a {
+    color: #111;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.25;
+    width: fit-content;
+}
+
+.menu-bottom-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.menu-right {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.03)),
+        radial-gradient(circle at 44% 24%, rgba(255, 255, 255, 0.05), transparent 16%),
+        radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.06), transparent 12%),
+        radial-gradient(circle at 60% 22%, rgba(0, 0, 0, 0.14), transparent 20%);
+    pointer-events: none;
+}
+
+.menu-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
+}
+
+/* FOOTER */
+footer.footer {
+    width: 100%;
+    background: #fff;
+    color: #111;
+    padding: 10px 12px 12px;
+    font-family: "Montserrat", sans-serif;
+    margin-top: auto;
+}
+
+footer.footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin-bottom: 6px;
+    font-size: 0;
+}
+
+footer.footer .footer-links a {
+    font-size: 5.8px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: #111;
+    text-decoration: none;
+}
+
+footer.footer .footer-note {
+    font-size: 5.5px;
+    line-height: 1.35;
+    opacity: 0.82;
+    margin: 0;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .menu-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-left {
+        padding: 20px 24px 24px;
+    }
+
+    .menu-right {
+        display: none;
+    }
+
+    .menu-left-top {
+        gap: 24px;
+    }
+
+    .menu-left-center {
+        margin-top: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-header {
+        height: 52px;
+        padding: 0 12px;
+    }
+
+    .nav {
+        gap: 12px;
+    }
+
+    .account-header a,
+    .top-search,
+    .menu-trigger,
+    .menu-search {
+        font-size: 8px;
+    }
+
+    .logo-wrap {
+        width: 170px;
+        height: 28px;
+    }
+
+    .logo-img {
+        width: 170px;
+        height: 28px;
+    }
+
+    .account-main {
+        padding: 20px 16px 30px;
+    }
+
+    .login-box {
+        max-width: 100%;
+        margin-top: 0;
+    }
+}

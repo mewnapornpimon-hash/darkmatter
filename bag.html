@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>darkmatter — Bag</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="bag.css" />
+</head>
+
+<body>
+    <div class="bag-page">
+
+        <header class="bag-header">
+            <div class="nav nav-left">
+                
+            </div>
+
+            <a href="index.html" class="logo-wrap">
+                <img src="image/darkmatter_white.png" alt="darkmatter logo" class="logo-img" />
+            </a>
+
+            <div class="nav nav-right">
+                <a href="account.html">ACCOUNT</a>
+                <a href="bag.html" id="bagCount">BAG [ 0 ]</a>
+            </div>
+        </header>
+
+        <main class="bag-main">
+            <section class="bag-left">
+                <div class="bag-tabs">
+                    <span class="active">BAG</span>
+                    <span>INFORMATION</span>
+                    <span>SHIPPING</span>
+                    <span>PAYMENT</span>
+                </div>
+
+                <div class="bag-left-header">
+                    <div class="col-product">PRODUCT</div>
+                    <div class="col-price">PRICE</div>
+                    <div class="col-qty">QUANTITY</div>
+                    <div class="col-total">TOTAL</div>
+                </div>
+
+                <div id="bagItems" class="bag-items"></div>
+
+                <section class="bag-suggestions">
+                    <h3>YOU MAY ALSO LIKE</h3>
+                    <div class="suggest-grid">
+                        <div class="suggest-card">
+                            <img src="image/quickadd1.png" alt="suggest 1" />
+                            <div class="suggest-info">
+                                <p>FIRST SHADOW | ITEM 01</p>
+                                <p>€ 3.900,00</p>
+                                <button class="suggest-add-btn" data-add-to-bag data-id="shoes-01"
+                                    data-name="FIRST SHADOW" data-subtitle="ITEM 01" data-price="3900"
+                                    data-image="image/quickadd1.png" data-size="39">
+                                    QUICK ADD +
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="suggest-card">
+                            <img src="image/quickadd2.png" alt="suggest 2" />
+                            <div class="suggest-info">
+                                <p>FIRST SHADOW | ITEM 02</p>
+                                <p>€ 3.900,00</p>
+                                <button class="suggest-add-btn" data-add-to-bag data-id="men-02"
+                                    data-name="FIRST SHADOW" data-subtitle="ITEM 02" data-price="3900"
+                                    data-image="image/quickadd2.png" data-size="40">
+                                    QUICK ADD +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <aside class="bag-right">
+                <div class="summary-top">
+                    <h2>ORDER SUMMARY</h2>
+                    <span id="summaryCount">0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>SUBTOTAL</span>
+                    <span id="bagSubtotal">€ 0,00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>SHIPPING</span>
+                    <span>CALCULATED AT CHECKOUT</span>
+                </div>
+
+                <div class="summary-row total-row">
+                    <span>TOTAL</span>
+                    <span id="bagTotal">€ 0,00</span>
+                </div>
+
+                <label class="summary-check">
+                    <input type="checkbox" />
+                    <span>I’VE READ AND ACCEPT THE <u>PRIVACY POLICY</u> AND THE <u>TERMS AND CONDITIONS</u></span>
+                </label>
+
+                <a href="checkout.html" class="checkout-btn">
+                    <span>CHECKOUT</span>
+                    <span id="checkoutTotal">€ 0,00</span>
+                </a>
+            </aside>
+        </main>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">INFO</a>
+                <a href="#">CHANGE</a>
+                <a href="#">NEWSLETTER</a>
+                <a href="#">LEGAL AREA</a>
+                <a href="#">ECO-AWARE</a>
+                <a href="#">CUSTOMER CARE</a>
+                <a href="#">SOCIAL</a>
+                <a href="#">CAREERS</a>
+                <a href="#">RETURNS</a>
+                <a href="#">ACCESSIBILITY</a>
+            </div>
+
+            <p class="footer-note">
+                DARKMATTER FASHION BRAND THESIS COLLECTION PRESENTED FOR GRADUATION
+            </p>
+        </footer>
+    </div>
+
+    <script src="bag.js"></script>
+    <script>
+        function formatEuro(value) {
+            return "€ " + Number(value).toFixed(2).replace(".", ",");
+        }
+
+        function renderBagPage() {
+            const bag = getBag();
+            const bagItems = document.getElementById("bagItems");
+            const subtotalEl = document.getElementById("bagSubtotal");
+            const totalEl = document.getElementById("bagTotal");
+            const checkoutTotalEl = document.getElementById("checkoutTotal");
+            const summaryCountEl = document.getElementById("summaryCount");
+
+            if (!bagItems) return;
+
+            let total = 0;
+            let totalQty = 0;
+
+            if (bag.length === 0) {
+                bagItems.innerHTML = `
+        <div class="empty-bag">YOUR BAG IS CURRENTLY EMPTY.</div>
+      `;
+                subtotalEl.textContent = "€ 0,00";
+                totalEl.textContent = "€ 0,00";
+                checkoutTotalEl.textContent = "€ 0,00";
+                summaryCountEl.textContent = "0";
+                return;
+            }
+
+            bagItems.innerHTML = bag.map((item, index) => {
+                const price = Number(item.price || 0);
+                const qty = Number(item.quantity || 1);
+                const lineTotal = price * qty;
+
+                total += lineTotal;
+                totalQty += qty;
+
+                return `
+        <div class="bag-item">
+          <div class="bag-item-product">
+            <img src="${item.image}" alt="${item.name}" class="bag-item-image" />
+            <div class="bag-item-text">
+              <p class="bag-item-name">${item.name}</p>
+              <p class="bag-item-subtitle">${item.subtitle}</p>
+              <p class="bag-item-meta"><strong>SIZE:</strong> ${item.size || "-"}</p>
+              <p class="bag-item-meta"><strong>COLOR:</strong> BLACK</p>
+              <p class="bag-item-meta"><strong>QUANTITY:</strong> ${qty}</p>
+              <p class="bag-item-meta"><strong>PRICE:</strong> ${formatEuro(price)}</p>
+              <button type="button" class="remove-btn" onclick="removeBagItemAndRender(${index})">✕ REMOVE</button>
+            </div>
+          </div>
+
+          <div class="bag-item-price-col">${formatEuro(price)}</div>
+
+          <div class="bag-item-qty-col">
+            <button type="button" class="qty-btn" onclick="decreaseBagItemAndRender(${index})">−</button>
+            <span>${qty}</span>
+            <button type="button" class="qty-btn" onclick="increaseBagItemAndRender(${index})">+</button>
+          </div>
+
+          <div class="bag-item-total-col">${formatEuro(lineTotal)}</div>
+        </div>
+      `;
+            }).join("");
+
+            subtotalEl.textContent = formatEuro(total);
+            totalEl.textContent = formatEuro(total);
+            checkoutTotalEl.textContent = formatEuro(total);
+            summaryCountEl.textContent = totalQty;
+        }
+
+        window.removeBagItemAndRender = function (index) {
+            removeFromBag(index);
+            renderBagPage();
+        };
+
+        window.increaseBagItemAndRender = function (index) {
+            increaseBagItemQuantity(index);
+            renderBagPage();
+        };
+
+        window.decreaseBagItemAndRender = function (index) {
+            decreaseBagItemQuantity(index);
+            renderBagPage();
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderBagPage();
+        });
+    </script>
+</body>
+
+</html>

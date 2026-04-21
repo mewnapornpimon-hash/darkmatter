@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>darkmatter — Checkout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="checkout.css" />
+</head>
+
+<body>
+    <div class="checkout-page">
+        <div class="checkout-shell">
+
+            <header class="checkout-header">
+                <div class="checkout-header-left">
+                    <div class="checkout-header-left-inner">
+                        <a href="index.html" class="checkout-logo-wrap">
+                            <img src="image/darkmatter_white.png" alt="darkmatter logo" class="checkout-logo" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="checkout-header-right">
+                    <div class="checkout-header-right-inner">
+                        <a href="bag.html" id="bagCount" class="checkout-bag">BAG [ 1 ]</a>
+                    </div>
+                </div>
+            </header>
+
+            <main class="checkout-main">
+                <section class="checkout-left">
+                    <div class="checkout-left-inner">
+
+                        <section class="checkout-section">
+                            <div class="section-head">
+                                <h2>Contact</h2>
+                                <a href="account.html">Sign in</a>
+                            </div>
+
+                            <input type="email" class="field" placeholder="Email" />
+
+                            <label class="check-row">
+                                <input type="checkbox" />
+                                <span>Email me with news and offers</span>
+                            </label>
+
+                            <label class="check-row">
+                                <input type="checkbox" />
+                                <span>I have read and agree to the shipping policy &amp; refund policy.</span>
+                            </label>
+                        </section>
+
+                        <section class="checkout-section">
+                            <h2>Delivery</h2>
+                            <p class="helper">
+                                Please ensure every field in the shipping address contains only valid Latin characters.
+                            </p>
+
+                            <select class="field">
+                                <option>Italy</option>
+                                <option>Thailand</option>
+                            </select>
+
+                            <div class="two-col">
+                                <input type="text" class="field" placeholder="First name" />
+                                <input type="text" class="field" placeholder="Last name" />
+                            </div>
+
+                            <div class="field-icon-wrap">
+                                <input type="text" class="field" placeholder="Address" />
+                                <span class="field-icon">⌕</span>
+                            </div>
+
+                            <input type="text" class="field" placeholder="Apartment, suite, etc. (optional)" />
+
+                            <div class="three-col">
+                                <input type="text" class="field" placeholder="Postal code" />
+                                <input type="text" class="field" placeholder="City" />
+                                <select class="field">
+                                    <option>Province</option>
+                                </select>
+                            </div>
+
+                            <div class="field-icon-wrap">
+                                <input type="text" class="field" placeholder="Phone" />
+                                <span class="field-icon">?</span>
+                            </div>
+
+                            <input type="text" class="field" placeholder="Codice fiscale" />
+
+                            <p class="mini-note">È obbligatorio inserire il proprio codice fiscale</p>
+                        </section>
+
+                        <section class="checkout-section">
+                            <h2>Shipping method</h2>
+                            <div class="shipping-box">
+                                Enter your shipping address to view available shipping methods.
+                            </div>
+                        </section>
+
+                        <section class="checkout-section">
+                            <h2>Payment</h2>
+                            <p class="helper">All transactions are secure and encrypted.</p>
+                            <p class="helper payment-helper">
+                                Please ensure every field in the billing address contains only valid Latin characters.
+                            </p>
+
+                            <div class="payment-panel selected">
+                                <div class="payment-head">
+                                    <div class="payment-head-left">
+                                        <span class="radio active"></span>
+                                        <span>Credit card</span>
+                                    </div>
+                                    <div class="payment-head-right">
+                                        <span class="card-chip">VISA</span>
+                                        <span class="card-chip">MC</span>
+                                        <span class="card-chip">+2</span>
+                                    </div>
+                                </div>
+
+                                <div class="payment-body">
+                                    <div class="field-icon-wrap">
+                                        <input type="text" class="field payment-field" placeholder="Card number" />
+                                        <span class="field-icon">🔒</span>
+                                    </div>
+
+                                    <div class="two-col">
+                                        <input type="text" class="field payment-field"
+                                            placeholder="Expiration date (MM / YY)" />
+                                        <div class="field-icon-wrap">
+                                            <input type="text" class="field payment-field"
+                                                placeholder="Security code" />
+                                            <span class="field-icon">?</span>
+                                        </div>
+                                    </div>
+
+                                    <input type="text" class="field payment-field" placeholder="Name on card" />
+
+                                    <label class="check-row payment-check">
+                                        <input type="checkbox" checked />
+                                        <span>Use shipping address as billing address</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="payment-option">
+                                <span class="radio"></span>
+                                <span>PayPal</span>
+                                <span class="payment-brand">PayPal</span>
+                            </div>
+
+                            <div class="payment-option">
+                                <span class="radio"></span>
+                                <span>Klarna - Flexible payments</span>
+                                <span class="payment-brand pink">Klarna</span>
+                            </div>
+
+                            <div class="payment-option">
+                                <span class="radio"></span>
+                                <span>Bank Transfer</span>
+                            </div>
+                        </section>
+
+                        <section class="checkout-section">
+                            <p class="save-info-title">Save my information for a faster checkout</p>
+
+                            <div class="field-icon-wrap">
+                                <input type="text" class="field" placeholder="Mobile phone (optional)" />
+                                <span class="field-icon">📱</span>
+                            </div>
+
+                            <p class="mini-note">
+                                By providing your phone number, you agree to create a Shop account subject to Shop’s
+                                Terms and Privacy Policy.
+                            </p>
+                        </section>
+
+                        <section class="checkout-section">
+                            <div class="invoice-box">
+                                <label class="check-row invoice-row">
+                                    <input type="checkbox" />
+                                    <span>Invoice</span>
+                                </label>
+                            </div>
+                        </section>
+
+                        <button class="pay-btn">Pay now</button>
+
+                        <div class="checkout-links">
+                            <a href="#">Refund policy</a>
+                            <a href="#">Shipping</a>
+                            <a href="#">Privacy policy</a>
+                            <a href="#">Terms of service</a>
+                            <a href="#">Legal notice</a>
+                            <a href="#">Contact</a>
+                        </div>
+
+                    </div>
+                </section>
+
+                <aside class="checkout-right">
+                    <div class="checkout-right-inner">
+
+                        <div id="checkoutSummaryProduct"></div>
+
+                        <div class="discount-row">
+                            <input type="text" placeholder="Discount code" class="discount-input" />
+                            <button class="apply-btn">Apply</button>
+                        </div>
+
+                        <div class="summary-lines">
+                            <div class="line">
+                                <span>Subtotal</span>
+                                <span id="checkoutSubtotal">€ 0,00</span>
+                            </div>
+
+                            <div class="line">
+                                <span>Shipping</span>
+                                <span>Calculated at checkout</span>
+                            </div>
+
+                            <div class="line total">
+                                <div class="total-left">
+                                    <span>Total</span>
+                                    <small>EUR</small>
+                                </div>
+                                <span id="checkoutTotal">€ 0,00</span>
+                            </div>
+
+                            <p class="tax-note">Including taxes</p>
+                        </div>
+
+                    </div>
+                </aside>
+            </main>
+        </div>
+    </div>
+
+    <script src="bag.js"></script>
+    <script>
+        function formatEuro(value) {
+            return "€ " + Number(value).toFixed(2).replace(".", ",");
+        }
+
+        function renderCheckout() {
+            const bag = getBag();
+            const productBox = document.getElementById("checkoutSummaryProduct");
+            const subtotalEl = document.getElementById("checkoutSubtotal");
+            const totalEl = document.getElementById("checkoutTotal");
+
+            let total = 0;
+
+            if (!bag.length) {
+                productBox.innerHTML = `<p class="empty-summary">No items in bag.</p>`;
+                subtotalEl.textContent = "€ 0,00";
+                totalEl.textContent = "€ 0,00";
+                return;
+            }
+
+            productBox.innerHTML = bag.map((item, index) => {
+                const qty = Number(item.quantity || 1);
+                const price = Number(item.price || 0);
+                const lineTotal = qty * price;
+                total += lineTotal;
+
+                return `
+          <div class="summary-item">
+            <div class="summary-thumb-wrap">
+              <img src="${item.image}" alt="${item.name}" class="summary-item-image" />
+              <span class="summary-qty-badge">${qty}</span>
+            </div>
+
+            <div class="summary-item-info">
+              <p class="summary-item-name">${item.name}</p>
+              <p class="summary-item-sub">${item.subtitle || "ITEM 01"}</p>
+              <p class="summary-item-size">SIZE ${item.size || "-"}</p>
+            </div>
+
+            <div class="summary-item-price">${formatEuro(lineTotal)}</div>
+          </div>
+        `;
+            }).join("");
+
+            subtotalEl.textContent = formatEuro(total);
+            totalEl.textContent = formatEuro(total);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof updateBagCount === "function") updateBagCount();
+            renderCheckout();
+        });
+    </script>
+</body>
+
+</html>

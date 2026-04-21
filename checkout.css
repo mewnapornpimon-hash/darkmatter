@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #ececec;
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.checkout-page {
+    min-height: 100vh;
+    background: #ececec;
+}
+
+.checkout-shell {
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #f3f3f3;
+}
+
+/* HEADER */
+.checkout-header {
+  display: grid;
+  grid-template-columns: 56% 44%;
+  min-height: 82px;
+  border-bottom: 1px solid #d9d9d9;
+  background: #f5f5f5;
+}
+
+.checkout-header-left,
+.checkout-header-right {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.checkout-header-right {
+  border-left: 1px solid #d9d9d9;
+}
+
+/* ให้ padding ตรงกับ main */
+.checkout-header-left {
+  padding: 0 34px;
+}
+
+.checkout-header-right {
+  padding: 0 34px;
+}
+
+.checkout-header-left-inner {
+  width: 100%;
+  max-width: 482px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.checkout-header-right-inner {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.checkout-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkout-logo {
+  width: 175px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0);
+  display: block;
+}
+
+.checkout-bag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #111;
+}
+
+/* MAIN */
+.checkout-main {
+    display: grid;
+    grid-template-columns: 56% 44%;
+    min-height: calc(100vh - 62px);
+}
+
+/* LEFT */
+.checkout-left {
+    background: #f5f5f5;
+    padding: 26px 34px 42px;
+}
+
+.checkout-left-inner {
+    max-width: 482px;
+    margin: 0 auto;
+}
+
+.checkout-section {
+    margin-bottom: 34px;
+}
+
+.checkout-section h2,
+.section-head h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.section-head a {
+    font-size: 10px;
+    text-decoration: underline;
+    color: #333;
+}
+
+.helper {
+    font-size: 10px;
+    line-height: 1.55;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.payment-helper {
+    margin-bottom: 14px;
+}
+
+.mini-note {
+    font-size: 9px;
+    line-height: 1.5;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* FIELDS */
+.field,
+select.field,
+.discount-input {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #d7d7d7;
+    background: #f6f6f6;
+    border-radius: 9px;
+    padding: 0 16px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    color: #111;
+    outline: none;
+}
+
+.field::placeholder,
+.discount-input::placeholder {
+    color: #888;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+}
+
+.field-icon-wrap {
+    position: relative;
+}
+
+.field-icon-wrap .field {
+    padding-right: 42px;
+}
+
+.field-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #777;
+    pointer-events: none;
+}
+
+.check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 10px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.check-row input {
+    width: 15px;
+    height: 15px;
+    margin-top: 1px;
+}
+
+.shipping-box {
+    height: 54px;
+    border-radius: 8px;
+    background: #ebebeb;
+    color: #7b7b7b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    text-align: center;
+    padding: 0 14px;
+}
+
+/* PAYMENT */
+.payment-panel {
+    border: 1px solid #111;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+    margin-bottom: 0;
+}
+
+.payment-head {
+    min-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+    border-bottom: 1px solid #d7d7d7;
+    background: #f8f8f8;
+}
+
+.payment-head-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.payment-head-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    padding: 0 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 9px;
+    background: #fff;
+    color: #333;
+}
+
+.radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.radio.active {
+    border-color: #111;
+}
+
+.radio.active::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #111;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.payment-body {
+    padding: 12px;
+}
+
+.payment-field {
+    margin-bottom: 12px;
+}
+
+.payment-check {
+    margin: 0;
+    padding-top: 2px;
+}
+
+.payment-option {
+    min-height: 48px;
+    border: 1px solid #d7d7d7;
+    border-top: none;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    font-size: 11px;
+}
+
+.payment-brand {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1d5fd0;
+}
+
+.payment-brand.pink {
+    color: #ca4c87;
+}
+
+.save-info-title {
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.invoice-box {
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 14px 14px 2px;
+}
+
+.invoice-row {
+    margin-bottom: 10px;
+}
+
+.pay-btn {
+    width: 100%;
+    height: 48px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.checkout-links {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+}
+
+.checkout-links a {
+    font-size: 10px;
+    color: #444;
+    text-decoration: underline;
+}
+
+/* RIGHT */
+.checkout-right {
+    background: #ececec;
+    border-left: 1px solid #dfdfdf;
+    padding: 18px 34px 34px;
+}
+
+.checkout-right-inner {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.summary-item {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 14px;
+    align-items: start;
+    padding: 22px 0 12px;
+}
+
+.summary-thumb-wrap {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.summary-item-image {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    background: #f8f8f8;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 6px;
+    display: block;
+}
+
+.summary-qty-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.summary-item-info {
+    padding-top: 3px;
+}
+
+.summary-item-name {
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.summary-item-sub,
+.summary-item-size {
+    font-size: 9px;
+    line-height: 1.4;
+    color: #8a8a8a;
+    margin-bottom: 3px;
+}
+
+.summary-item-price {
+    font-size: 10px;
+    font-weight: 500;
+    padding-top: 3px;
+}
+
+.discount-row {
+    display: grid;
+    grid-template-columns: 1fr 72px;
+    gap: 10px;
+    margin: 16px 0 28px;
+}
+
+.apply-btn {
+    height: 44px;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    background: #e4e4e4;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.summary-lines {
+    margin-top: 6px;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 10px;
+    color: #222;
+}
+
+.line.total {
+    padding-top: 14px;
+    align-items: flex-end;
+}
+
+.total-left {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.total-left span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.total-left small {
+    font-size: 9px;
+    color: #8a8a8a;
+}
+
+.line.total>span:last-child {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tax-note {
+    font-size: 9px;
+    color: #8d8d8d;
+    margin-top: -2px;
+}
+
+.empty-summary {
+    font-size: 10px;
+    color: #666;
+    padding: 20px 0;
+}
+
+@media (max-width: 1100px) {
+    .checkout-main {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-right {
+        border-left: none;
+        border-top: 1px solid #dfdfdf;
+    }
+}

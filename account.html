@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>darkmatter — Account</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="account.css" />
+</head>
+<body>
+  <div class="account-page">
+
+    <header class="account-header">
+      <div class="nav nav-left">
+    
+      </div>
+
+      <a href="index.html" class="logo-wrap">
+        <img src="image/darkmatter_white.png" alt="darkmatter logo" class="logo-img" />
+      </a>
+
+      <div class="nav nav-right">
+        <a href="account.html">ACCOUNT</a>
+        <a href="bag.html" id="bagCount">BAG [ 0 ]</a>
+      </div>
+    </header>
+
+    <main class="account-main">
+      <section class="login-box">
+        <h1 class="login-title">LOGIN</h1>
+
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">EMAIL *</label>
+            <input type="email" id="email" name="email" />
+          </div>
+
+          <div class="password-row">
+            <label for="password">PASSWORD *</label>
+            <a href="#" class="forgot-link">FORGOT?</a>
+          </div>
+
+          <div class="form-group password-group">
+            <input type="password" id="password" name="password" />
+          </div>
+
+          <button type="submit" class="login-btn">LOGIN</button>
+
+          <div class="create-account-block">
+            <p>YOU DON'T HAVE AN ACCOUNT?</p>
+            <p>CLICK THE BUTTON BELOW AND CREATE AN ACCOUNT.</p>
+            <a href="create-account.html" class="create-link">CREATE ACCOUNT →</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="menu-panel">
+        <aside class="menu-left">
+          <div class="menu-left-top">
+            <button class="menu-trigger menu-close" id="menuClose">✕ CLOSE</button>
+            
+          </div>
+
+          <div class="menu-left-center">
+            <div class="menu-links-group">
+              <a href="#">WOMEN</a>
+              <a href="#">MEN</a>
+              <a href="#">KIDS</a>
+              <a href="#">BAGS</a>
+              <a href="#">ACCESSORIES</a>
+              <a href="#">HOME</a>
+              <a href="#">ECO-AWARE</a>
+            </div>
+
+            <div class="menu-links-group second-group">
+              <a href="#">RUNWAY SHOWS</a>
+              <a href="#">PRODUCT GUIDE</a>
+              <a href="#">INTERVIEWS</a>
+              <a href="#">LAMYLAND</a>
+              <a href="#">FURNITURE</a>
+              <a href="#">EXHIBITIONS</a>
+              <a href="#">STORES</a>
+            </div>
+          </div>
+
+          <div class="menu-bottom-links">
+            <a href="#">WISHLIST [ 1 ]</a>
+            <a href="#">ITALY / EUR</a>
+          </div>
+        </aside>
+
+        <div class="menu-right" id="menuRight"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">INFO</a>
+        <a href="#">CHANGE</a>
+        <a href="#">NEWSLETTER</a>
+        <a href="#">LEGAL AREA</a>
+        <a href="#">ECO-AWARE</a>
+        <a href="#">CUSTOMER CARE</a>
+        <a href="#">SOCIAL</a>
+        <a href="#">CAREERS</a>
+        <a href="#">RETURNS</a>
+        <a href="#">ACCESSIBILITY</a>
+      </div>
+
+      <p class="footer-note">
+        DARKMATTER FASHION BRAND THESIS COLLECTION PRESENTED FOR GRADUATION
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="account.js"></script>
+</body>
+</html>
